@@ -8,4 +8,6 @@ public class Pet
 
     public int TutorId { get; set; }
 
+    public Tutor? Tutor { get; set; }
+
 }
