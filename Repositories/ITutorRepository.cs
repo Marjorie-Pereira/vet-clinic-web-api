@@ -1,4 +1,4 @@
-public interface ITutorService
+public interface ITutorRepository
 {
     Task<IEnumerable<Tutor>> GetAll();
     Task<Tutor?> GetById(int id);
