@@ -1,17 +1,19 @@
-public class PetService : IPetService
+public class PetService(IPetRepository petRepository) : IPetService
 {
+    private readonly IPetRepository _petRepository = petRepository;
+
     public async Task<IEnumerable<Pet>> GetAll()
     {
-        return null;
+        return await _petRepository.GetAllAsync();
     }
 
-    public Pet? GetById(int id)
+    public async Task<Pet?> GetById(int id)
     {
-        return null;
+        return await _petRepository.GetByIdAsync(id);
     }
 
-    public Pet Add(Pet pet)
+    public async Task<Pet> Add(Pet pet)
     {
-        return null;
-    }
+        return await _petRepository.AddAsync(pet);
+    }	
 }
